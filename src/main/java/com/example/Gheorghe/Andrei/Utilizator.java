@@ -1,5 +1,9 @@
 package com.example.Gheorghe.Andrei;
 
+import java.util.List;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+
 public class Utilizator {
 	
 	String Nume;
@@ -46,4 +50,23 @@ public class Utilizator {
 		Parola = parola;
 	}
 
+	public Utilizator()
+	{
+		
+	}
+	public Utilizator findemail(String email)
+	{
+		JdbcTemplate jdbcTemplate=new JdbcTemplate();
+		UserRowMapper user = new UserRowMapper();
+        return jdbcTemplate.query("select * from utilizator where email ="+email, user).get(0);
+	}
+	public List<Utilizator> Afisare()
+	{
+		JdbcTemplate jdbcTemplate = new JdbcTemplate();
+		return jdbcTemplate.query("select * from utilizator", new UserRowMapper());
+	}
+	public void Salvare(String nume,String prenume,String mail,String user,String parola)
+	{
+		
+	}
 }
