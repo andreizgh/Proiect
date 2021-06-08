@@ -80,8 +80,8 @@ public class Utilizator {
 		UserRowMapper user = new UserRowMapper();
         return jdbcTemplate.query("select * from utilizator where email ="+email, user).get(0);
 	}
-	public  List<Utilizator> findAll() {
-	    List<Utilizator> Utilizatori = new ArrayList<>();
+	public  List<Object> findAll() {
+	    List<Object> Utilizatori = new ArrayList<>();
 	    interfata_user.findAll().forEach(Utilizatori::add);
 	    return Utilizatori;
 	}

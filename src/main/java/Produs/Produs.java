@@ -47,8 +47,8 @@ public class Produs {
 	}
 
 	
-		public  List<Produs> findAll() {
-		    List<Produs> Produse = new ArrayList<>();
+		public  List<Object> findAll() {
+		    List<Object> Produse = new ArrayList<>();
 		    interfata_produs.findAll().forEach(Produse::add);
 		    return Produse;
 		}

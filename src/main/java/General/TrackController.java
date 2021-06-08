@@ -39,7 +39,7 @@ public class TrackController {
 	@GetMapping("/produs")
 	public ModelAndView product() {
 	        ModelAndView modelAndView = new ModelAndView("product");
-	        List<Produs> produsul = produs.findAll();
+	        List<Object> produsul = produs.findAll();
 	        modelAndView.addObject("produs", produsul);
 	        return modelAndView;
 	}
@@ -60,7 +60,7 @@ public class TrackController {
 	@GetMapping("/clienti")
 	public ModelAndView clienti() {
         ModelAndView modelAndView = new ModelAndView("product");
-        List<Utilizator> clienti =utilizator.findAll();
+        List<Object> clienti =utilizator.findAll();
         for(int i=0;i<=clienti.size();i++)
         {
         modelAndView.addObject("client", clienti.get(i));
